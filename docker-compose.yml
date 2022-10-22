@@ -2,9 +2,7 @@ version: '2'
 
 services:
   app:
-    build:
-      context: .
-      image: iamsashko/text2img:latest
+    image: iamsashko/text2img:latest
     container_name: text2img
     volumes:
       - ./data:/storage/text2img/data
