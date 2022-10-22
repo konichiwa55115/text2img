@@ -4,10 +4,11 @@ services:
   app:
     build:
       context: .
-      dockerfile: ./docker/Dockerfile
+      image: iamsashko/text2img:latest
     container_name: text2img
     volumes:
       - ./data:/storage/text2img/data
       - ./config:/storage/text2img/config
       - ./src:/storage/text2img/src
       - ./scripts:/storage/text2img/scripts
+    restart: always
