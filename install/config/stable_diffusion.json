@@ -1,0 +1,5 @@
+{
+    "api_host": "<API_HOST>",
+    "api_key": "<API_KEY>",
+    "generation_steps": <IMAGE_GENERATION_STEPS>
+}

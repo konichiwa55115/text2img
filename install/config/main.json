@@ -1,0 +1,5 @@
+{
+    "app_name": "<APP_NAME>",
+    "text2image_method": "<TEXT2IMAGE_GENERATION_METHOD>",
+    "debug_mode": <DEBUG_MODE>
+}

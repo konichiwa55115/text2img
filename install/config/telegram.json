@@ -1,0 +1,5 @@
+{
+    "bot_token": "<BOT_TOKEN>",
+    "log_chat_id": <LOG_CHAT_ID>,
+    "admin_chat_id": <ADMIN_CHAT_ID>
+}

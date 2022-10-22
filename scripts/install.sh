@@ -8,7 +8,10 @@ mkdir data/logs
 mkdir data/media
 touch data/telegram_last_update_id.txt
 
+cp -r install/config config
+
 chmod 775 -R data
+chmod 775 -R config
 
 cd "$scriptDir/.." || exit 1
 
