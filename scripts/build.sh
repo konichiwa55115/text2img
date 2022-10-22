@@ -5,9 +5,13 @@ scriptDir="$(cd "$(dirname "${BASH_SOURCE[0]}")" > /dev/null && pwd)"
 
 cd "$scriptDir/.." || exit 1
 
+git fetch --all --tags
 tag=$(git describe --tags `git rev-list --tags --max-count=1`)
 
-sudo docker build -t iamsashko/text2img .
+git checkout -f "$tag"
+git pull origin "$tag"
+
+sudo docker build -t iamsashko/text2img:"$tag" .
 
 sudo docker login
 
