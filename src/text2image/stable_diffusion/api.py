@@ -41,7 +41,7 @@ class Api:
 
         if len(prompt) > 1:
             self.__use_auto_improved_prompt = prompt[0] == '!'
-            self.__use_default_effects = prompt[0] == '@'
+            self.__use_default_effects = prompt[0] == '$'
 
         if (
             len(prompt) > 2 and (
@@ -61,7 +61,8 @@ class Api:
             prompts[0] = None
             binaryImage = self.__sendPromptToRemote(prompt, self.__generation_steps)
 
-        self.__sendIntermediateImageToAdmin('INITAL', binaryImage)
+        if (self.__use_default_effects or len(prompts) > 1) and self.__debug_mode:
+            self.__sendIntermediateImageToAdmin('INITAL', binaryImage)
 
         if len(prompts) > 1:
             for effectPrompt in prompts:
@@ -176,7 +177,8 @@ class Api:
     ) -> Union[bytes, None]:
         binaryImage = self.__sendPromptWithImageToRemote(effectPrompt, generationSteps, effectStrength, binaryImage)
 
-        self.__sendIntermediateImageToAdmin('Effect: "%s"' % effectPrompt, binaryImage)
+        if self.__debug_mode:
+            self.__sendIntermediateImageToAdmin('Effect: "%s"' % effectPrompt, binaryImage)
 
         return binaryImage
 
