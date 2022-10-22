@@ -16,6 +16,7 @@ sudo docker build -t iamsashko/text2img:"$tag" .
 sudo docker login
 
 sudo docker push iamsashko/text2img:"$tag"
+sudo docker push iamsashko/text2img:latest
 
 cd "$currentDir" || exit 1
 
