@@ -12,6 +12,7 @@ git checkout -f "$tag"
 git pull origin "$tag"
 
 sudo docker build -t iamsashko/text2img:"$tag" .
+sudo docker build -t iamsashko/text2img:latest .
 
 sudo docker login
 
