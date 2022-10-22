@@ -1,9 +1,19 @@
 #!/bin/bash
 
-cd ..
-rm -rf $(pwd)
+scriptDir="$(cd "$(dirname "${BASH_SOURCE[0]}")" > /dev/null && pwd)"
 
-git clone https://github.com/the-sashko/text2img.git
+cd "$scriptDir/.." || exit 1
+
+currentDir=$(pwd)
+
+cd ..
+
+rm -rf currentDir
+
+git clone https://github.com/the-sashko/text2img.git text2img
+
+cd text2img
+
 git fetch --all --tags
 tag=$(git describe --tags `git rev-list --tags --max-count=1`)
 git checkout -f "$tag"
