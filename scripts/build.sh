@@ -5,6 +5,7 @@ scriptDir="$(cd "$(dirname "${BASH_SOURCE[0]}")" > /dev/null && pwd)"
 
 cd "$scriptDir/.." || exit 1
 
+git checkout -f master
 git fetch --all --tags
 tag=$(git describe --tags `git rev-list --tags --max-count=1`)
 
