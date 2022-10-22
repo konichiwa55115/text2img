@@ -1,5 +1,2 @@
 stability-sdk
-IPython
-Pillow
-ffmpeg-python
 requests

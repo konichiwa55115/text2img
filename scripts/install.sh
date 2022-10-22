@@ -5,15 +5,38 @@ scriptDir="$(cd "$(dirname "${BASH_SOURCE[0]}")" > /dev/null && pwd)"
 
 cd "$scriptDir/.." || exit 1
 
-mkdir data
-mkdir data/logs
-mkdir data/media
-touch data/telegram_last_update_id.txt
+if [ ! -d "data" ]
+then
+    mkdir data
+fi
 
-cp -r install/config config
+if [ ! -d "data/logs" ]
+then
+    mkdir data/logs
+fi
+
+if [ ! -d "data/media" ]
+then
+    mkdir data/media
+fi
+
+if [ ! -f "data/telegram_last_update_id.txt" ]
+then
+    touch data/telegram_last_update_id.txt
+fi
+
+if [ ! -d "config" ]
+then
+    cp -r install/config config
+fi
 
 chmod 775 -R data
 chmod 775 -R config
+
+if [ ! -d "env" ]
+then
+    rm -rf env
+fi
 
 virtualenv env
 
@@ -25,5 +48,3 @@ pip3 install -r requirements.txt
 deactivate
 
 cd "$currentDir" || exit 1
-
-exit 0
