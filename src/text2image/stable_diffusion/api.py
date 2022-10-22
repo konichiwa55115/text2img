@@ -19,10 +19,7 @@ class Api:
     __auto_improved_prompt = 'Photo of %s, 4k, HD, rtx, detailed, cinematic, photo, realisitc'
     __use_auto_improved_prompt = False
     __use_default_effects = False
-    __filter_error_message = '''
-        Your request activated the safety filters and could not be processed.
-        Please modify the prompt and try again
-    '''
+    __filter_error_message = 'Your request activated the safety filters and could not be processed. Please modify the prompt and try again'
 
     def __init__(self):
         stableDiffusionConfig = Settings().getStableDiffusionConfig()
