@@ -7,7 +7,10 @@ cd "$scriptDir/.." || exit 1
 
 source env/bin/activate
 
-python3 src/run.py
+while :
+do
+    python3 src/run.py
+done
 
 deactivate
 
