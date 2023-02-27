@@ -1,2 +1,2 @@
-stability-sdk
+stability-sdk==0.2.6
 requests==2.28.1
