@@ -1,5 +1,5 @@
 {
-    "api_host": "<API_HOST>",
+    "api_host": "DreamStudio",
     "api_key": "sk-lFpPzmrwgaIPeusZPE07uGoWmXcuvwQPUEtZCwjzCtUdd1re",
     "generation_steps": <IMAGE_GENERATION_STEPS>
 }
